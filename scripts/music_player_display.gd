@@ -42,6 +42,7 @@ func _ready() -> void:
 	next_button.pressed.connect(_on_next_pressed)
 	search_bar.focus_entered.connect(_on_search_focus)
 	search_bar.focus_exited.connect(_on_search_focus_exit)
+	search_bar.editing_toggled.connect(_on_search_edit)
 	search_tree.focus_exited.connect(_on_search_focus_exit)
 	search_tree.item_selected.connect(_on_item_select)
 	pause_play_button.pressed.connect(_on_pause_play_pressed)
@@ -109,8 +110,13 @@ func _on_next_pressed():
 	if mp == null: return
 	mp.next()
 
+
+func _on_search_edit():
+	search_tree.visible = true
+
 func _on_search_focus():
 	search_tree.visible = true
+	pass
 	
 	
 func _on_search_focus_exit():

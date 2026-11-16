@@ -23,9 +23,42 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeaoo"]
+bg_color = Color(0.69803923, 0.9019608, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7eh4"]
+bg_color = Color(0.69803923, 0.9019608, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aggjg"]
+bg_color = Color(0.69803923, 0.9019608, 1, 0.6862745)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
 [resource]
 HSlider/icons/grabber = SubResource("GradientTexture2D_i7eh4")
 HSlider/icons/grabber_disabled = SubResource("GradientTexture2D_i7eh4")
 HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_i7eh4")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_amlv4")
 HSlider/styles/slider = SubResource("StyleBoxFlat_j2q5q")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_aeaoo")
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_i7eh4")
+Tree/colors/font_color = Color(0, 0, 0, 1)
+Tree/colors/guide_color = Color(0, 0, 0, 1)
+Tree/styles/panel = SubResource("StyleBoxFlat_aggjg")
