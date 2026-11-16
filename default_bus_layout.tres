@@ -1,0 +1,14 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://en4o2jlc45wv"]
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_j3pel"]
+resource_name = "EQ"
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_j3pel"]
+resource_name = "SpectrumAnalyzer"
+
+[resource]
+bus/0/volume_db = -0.9237509
+bus/0/effect/0/effect = SubResource("AudioEffectEQ_j3pel")
+bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource("AudioEffectSpectrumAnalyzer_j3pel")
+bus/0/effect/1/enabled = true

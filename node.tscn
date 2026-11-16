@@ -1,0 +1,610 @@
+[gd_scene format=3 uid="uid://dssewgcrc1bl2"]
+
+[ext_resource type="Script" uid="uid://b6jx5pb6tkaqi" path="res://scripts/music_library.gd" id="1_j2q8x"]
+[ext_resource type="Script" uid="uid://cut5fux76dtix" path="res://scripts/music_scanner.gd" id="1_sy5k4"]
+[ext_resource type="Script" uid="uid://hogie43ysq4s" path="res://scripts/music_player.gd" id="3_112p8"]
+[ext_resource type="Theme" uid="uid://lxreuq0b0jdr" path="res://new_theme.tres" id="4_aeaoo"]
+[ext_resource type="Script" uid="uid://c0cvqquh0cpvv" path="res://scripts/music_player_display.gd" id="4_e2u21"]
+[ext_resource type="Texture2D" uid="uid://5pgu3bwreso2" path="res://icons/play.png" id="5_bss38"]
+[ext_resource type="Script" uid="uid://c7y65s6hnm10h" path="res://scripts/auto_scroll.gd" id="5_f0urt"]
+[ext_resource type="Shader" uid="uid://drj5wtj108gy2" path="res://shaders/round_border.gdshader" id="5_l6pdb"]
+[ext_resource type="Texture2D" uid="uid://x4t8qddryoue" path="res://icons/back.png" id="5_qn3nj"]
+[ext_resource type="Texture2D" uid="uid://wd8fugtb0vlt" path="res://icons/speaker_on.png" id="5_r657h"]
+[ext_resource type="Shader" uid="uid://dr0jdnhicuu2x" path="res://shaders/aero_glass.gdshader" id="5_wt6go"]
+[ext_resource type="Texture2D" uid="uid://c25cyy1m4ynty" path="res://windows_7_14.jpg" id="6_436f3"]
+[ext_resource type="Texture2D" uid="uid://ulb62a2ykjpc" path="res://icons/next.png" id="7_l6pdb"]
+[ext_resource type="Script" uid="uid://vo7fr0hp7tee" path="res://scripts/visualizer.gd" id="11_jfkdj"]
+[ext_resource type="Texture2D" uid="uid://uksngusdcdis" path="res://icons/cog.png" id="13_bcos8"]
+[ext_resource type="Texture2D" uid="uid://doaqs3cvott83" path="res://icons/x.png" id="13_feppd"]
+[ext_resource type="Texture2D" uid="uid://ciqmu3i20shqw" path="res://icons/min.png" id="14_aeaoo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wt6go"]
+shader = ExtResource("5_wt6go")
+shader_parameter/glass_color = Color(0.69803923, 0.9019608, 1, 1)
+shader_parameter/opacity = 0.6430000305425
+shader_parameter/distortion_strength = 0.0030000001425
+shader_parameter/distortion_scale = 12.398000541405
+shader_parameter/animation_speed = 2.6170001243075
+shader_parameter/water_strength = 5.0
+shader_parameter/water_scale = 18.0
+shader_parameter/water_speed = 1.0
+shader_parameter/water_highlights = 0.3
+shader_parameter/water_color = Color(0.8, 0.95, 1, 1)
+shader_parameter/top_left_radius = 0.2999999932944
+shader_parameter/top_right_radius = 0.2999999932944
+shader_parameter/bottom_left_radius = 0.2999999932944
+shader_parameter/bottom_right_radius = 0.2999999932944
+shader_parameter/antialiasing = 1.0
+shader_parameter/edge_width = 0.0110000005225
+shader_parameter/edge_strength = 2.0
+shader_parameter/highlight_strength = 0.5
+shader_parameter/edge_color = Color(0.75, 0.97, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_436f3"]
+shader = ExtResource("5_l6pdb")
+shader_parameter/top_left_radius = 0.2999999932944
+shader_parameter/top_right_radius = 0.2999999932944
+shader_parameter/bottom_left_radius = 0.2999999932944
+shader_parameter/bottom_right_radius = 0.2999999932944
+shader_parameter/antialiasing = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r657h"]
+shader = ExtResource("5_l6pdb")
+shader_parameter/top_left_radius = 0.1999999955296
+shader_parameter/top_right_radius = 0.1999999955296
+shader_parameter/bottom_left_radius = 0.1999999955296
+shader_parameter/bottom_right_radius = 0.1999999955296
+shader_parameter/antialiasing = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sps8e"]
+bg_color = Color(0.69803923, 0.9019608, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aeaoo"]
+shader = ExtResource("5_wt6go")
+shader_parameter/glass_color = Color(0.69803923, 0.9019608, 1, 1)
+shader_parameter/opacity = 0.70000003325
+shader_parameter/distortion_strength = 0.010000000475
+shader_parameter/distortion_scale = 1.0
+shader_parameter/animation_speed = 0.774000036765
+shader_parameter/water_strength = 5.0
+shader_parameter/water_scale = 16.6690007442775
+shader_parameter/water_speed = 1.0
+shader_parameter/water_highlights = 0.3
+shader_parameter/water_color = Color(0.8, 0.9490196, 1, 1)
+shader_parameter/top_left_radius = 0.2999999932944
+shader_parameter/top_right_radius = 0.2999999932944
+shader_parameter/bottom_left_radius = 0.2999999932944
+shader_parameter/bottom_right_radius = 0.2999999932944
+shader_parameter/antialiasing = 1.0
+shader_parameter/edge_width = 0.0330000015675
+shader_parameter/edge_strength = 0.7950000377625
+shader_parameter/highlight_strength = 0.906000043035
+shader_parameter/edge_color = Color(0.7490196, 0.96862745, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bcos8"]
+shader = ExtResource("5_wt6go")
+shader_parameter/glass_color = Color(0.69803923, 0.9019608, 1, 1)
+shader_parameter/opacity = 0.70000003325
+shader_parameter/distortion_strength = 0.010000000475
+shader_parameter/distortion_scale = 1.0
+shader_parameter/animation_speed = 0.774000036765
+shader_parameter/water_strength = 5.0
+shader_parameter/water_scale = 16.6690007442775
+shader_parameter/water_speed = 1.0
+shader_parameter/water_highlights = 0.3
+shader_parameter/water_color = Color(0.8, 0.9490196, 1, 1)
+shader_parameter/top_left_radius = 0.2999999932944
+shader_parameter/top_right_radius = 0.2999999932944
+shader_parameter/bottom_left_radius = 0.2999999932944
+shader_parameter/bottom_right_radius = 0.2999999932944
+shader_parameter/antialiasing = 1.0
+shader_parameter/edge_width = 0.0330000015675
+shader_parameter/edge_strength = 0.7950000377625
+shader_parameter/highlight_strength = 0.906000043035
+shader_parameter/edge_color = Color(0.7490196, 0.96862745, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_g4v7s"]
+thickness = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_feppd"]
+bg_color = Color(0.69803923, 0.9019608, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_436f3"]
+bg_color = Color(0.85882354, 0.99215686, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_feppd"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node" type="Node" unique_id=1351755837]
+
+[node name="MusicLibrary" type="Node" parent="." unique_id=1739670436]
+script = ExtResource("1_j2q8x")
+metadata/_custom_type_script = "uid://b6jx5pb6tkaqi"
+
+[node name="MusicScanner" type="Node" parent="." unique_id=1190952121]
+script = ExtResource("1_sy5k4")
+metadata/_custom_type_script = "uid://cut5fux76dtix"
+
+[node name="MusicPlayer" type="Node" parent="." unique_id=1625454123 node_paths=PackedStringArray("player")]
+script = ExtResource("3_112p8")
+player = NodePath("AudioStreamPlayer")
+metadata/_custom_type_script = "uid://hogie43ysq4s"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer" unique_id=1435558098]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=994638067]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=610067396 node_paths=PackedStringArray("search_bar", "search_tree", "back_button", "pause_play_button", "next_button", "cover_texture_rect", "play_bar", "selected_track_name_label", "selected_track_artist_label", "selected_track_album_label", "volume_button", "volume_slider", "min_button", "quit_button", "visualizer_options", "settings_button", "settings_panel", "eq_32", "eq_100", "eq_320", "eq_1000", "eq_3200", "eq_10000")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_aeaoo")
+script = ExtResource("4_e2u21")
+search_bar = NodePath("LineEdit")
+search_tree = NodePath("LineEdit/Tree")
+back_button = NodePath("HBoxContainer/Back")
+pause_play_button = NodePath("HBoxContainer/Play")
+next_button = NodePath("HBoxContainer/Next")
+cover_texture_rect = NodePath("TextureRect")
+play_bar = NodePath("HSlider")
+selected_track_name_label = NodePath("QuickPanel/ScrollContainer/Label")
+selected_track_artist_label = NodePath("QuickPanel/Label3")
+selected_track_album_label = NodePath("QuickPanel/Label2")
+volume_button = NodePath("QuickPanel/VolumeButton")
+volume_slider = NodePath("QuickPanel/HSlider")
+min_button = NodePath("QuickPanel/Min")
+quit_button = NodePath("QuickPanel/Quit")
+visualizer_options = NodePath("QuickPanel/OptionButton")
+settings_button = NodePath("QuickPanel/Settings")
+settings_panel = NodePath("SettingsPanel")
+eq_32 = NodePath("QuickPanel/VBoxContainer/HSlider")
+eq_100 = NodePath("QuickPanel/VBoxContainer/HSlider2")
+eq_320 = NodePath("QuickPanel/VBoxContainer/HSlider3")
+eq_1000 = NodePath("QuickPanel/VBoxContainer/HSlider4")
+eq_3200 = NodePath("QuickPanel/VBoxContainer/HSlider5")
+eq_10000 = NodePath("QuickPanel/VBoxContainer/HSlider6")
+
+[node name="Panel" type="ColorRect" parent="CanvasLayer/Control" unique_id=1899437238]
+material = SubResource("ShaderMaterial_wt6go")
+layout_mode = 1
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1856.0
+offset_bottom = 1024.0
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/Panel" unique_id=1051163047]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_436f3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_436f3")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=969724881]
+material = SubResource("ShaderMaterial_r657h")
+layout_mode = 0
+offset_left = 128.0
+offset_top = 256.0
+offset_right = 640.0
+offset_bottom = 768.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Control" unique_id=1689216445]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 856.0
+offset_right = 640.0
+offset_bottom = 872.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=95836677]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 832.0
+offset_right = 1280.0
+offset_bottom = 896.0
+alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer/Control/HBoxContainer" unique_id=277024678]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_qn3nj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Play" type="Button" parent="CanvasLayer/Control/HBoxContainer" unique_id=1941180822]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_bss38")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Next" type="Button" parent="CanvasLayer/Control/HBoxContainer" unique_id=1668958190]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("7_l6pdb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Control" unique_id=1168069159]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 160.0
+offset_right = 640.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.6)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sps8e")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_sps8e")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sps8e")
+placeholder_text = "Search"
+
+[node name="Tree" type="Tree" parent="CanvasLayer/Control/LineEdit" unique_id=1075744005]
+visible = false
+layout_mode = 0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 640.0
+
+[node name="SettingsPanel" type="ColorRect" parent="CanvasLayer/Control" unique_id=346166873]
+visible = false
+material = SubResource("ShaderMaterial_aeaoo")
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 1344.0
+offset_bottom = 960.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/SettingsPanel" unique_id=836298056]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 512.0
+offset_right = 168.0
+offset_bottom = 535.0
+text = "Special Thanks To"
+label_settings = SubResource("LabelSettings_57qmd")
+
+[node name="AutoScroll" type="ScrollContainer" parent="CanvasLayer/Control/SettingsPanel" unique_id=83877848]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 552.0
+offset_right = 640.0
+offset_bottom = 592.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("5_f0urt")
+speed = 0.1
+scroll_h = true
+metadata/_custom_type_script = "uid://c7y65s6hnm10h"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/SettingsPanel/AutoScroll" unique_id=361060576]
+layout_mode = 2
+text = "https://github.com/solobot2/godotId3TagParser/blob/master/addons/Id3TagParser/MP3ID3Tag.gd"
+label_settings = SubResource("LabelSettings_57qmd")
+
+[node name="QuickPanel" type="ColorRect" parent="CanvasLayer/Control" unique_id=1953755067]
+material = SubResource("ShaderMaterial_bcos8")
+layout_mode = 0
+offset_left = 1408.0
+offset_top = 128.0
+offset_right = 1792.0
+offset_bottom = 960.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/QuickPanel" unique_id=1661468747]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16700001
+anchor_top = 0.058000002
+anchor_right = 0.16700001
+anchor_bottom = 0.058000002
+offset_left = -0.12800598
+offset_top = 111.744
+offset_right = 255.872
+offset_bottom = 151.744
+scroll_horizontal_custom_step = 0.1
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+script = ExtResource("5_f0urt")
+speed = 0.1
+scroll_h = true
+scroll_v = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/QuickPanel/ScrollContainer" unique_id=1877626067]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Song Title"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/QuickPanel" unique_id=844187171]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 208.0
+offset_right = 320.0
+offset_bottom = 272.0
+text = "Album"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/QuickPanel" unique_id=724078883]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 272.0
+offset_right = 320.0
+offset_bottom = 336.0
+text = "Artist"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/QuickPanel" unique_id=473291864]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 368.0
+offset_right = 376.0
+offset_bottom = 376.0
+theme_override_styles/separator = SubResource("StyleBoxLine_g4v7s")
+
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/Control/QuickPanel" unique_id=594306560]
+layout_mode = 0
+offset_top = 736.0
+offset_right = 368.0
+offset_bottom = 744.0
+theme_override_styles/separator = SubResource("StyleBoxLine_g4v7s")
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/Control/QuickPanel" unique_id=1666488753]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 128.0
+offset_right = 376.0
+offset_bottom = 136.0
+theme_override_styles/separator = SubResource("StyleBoxLine_g4v7s")
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Control/QuickPanel" unique_id=247022259]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 752.0
+offset_right = 368.0
+offset_bottom = 768.0
+max_value = 0.0
+step = 0.01
+
+[node name="VolumeButton" type="Button" parent="CanvasLayer/Control/QuickPanel" unique_id=520788836]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 744.0
+offset_right = 64.0
+offset_bottom = 784.0
+icon = ExtResource("5_r657h")
+flat = true
+
+[node name="Quit" type="Button" parent="CanvasLayer/Control/QuickPanel" unique_id=403086352]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.771
+anchor_top = 0.038000003
+anchor_right = 0.87500006
+anchor_bottom = 0.085
+offset_left = 15.935974
+offset_top = 0.38399887
+offset_right = 15.9999695
+offset_bottom = 0.27999878
+theme_override_styles/normal = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_feppd")
+icon = ExtResource("13_feppd")
+icon_alignment = 1
+
+[node name="Min" type="Button" parent="CanvasLayer/Control/QuickPanel" unique_id=1314406000]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68700004
+anchor_top = 0.038000003
+anchor_right = 0.79200006
+anchor_bottom = 0.087000005
+offset_left = 0.19198608
+offset_top = 0.38399887
+offset_right = -0.12802124
+offset_bottom = -0.3840027
+theme_override_styles/normal = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_feppd")
+icon = ExtResource("14_aeaoo")
+icon_alignment = 1
+
+[node name="Settings" type="Button" parent="CanvasLayer/Control/QuickPanel" unique_id=1117615050]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.771
+anchor_top = 0.038000003
+anchor_right = 0.87500006
+anchor_bottom = 0.085
+offset_left = -80.064026
+offset_top = 0.38399887
+offset_right = -80.00003
+offset_bottom = 0.27999878
+theme_override_styles/normal = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_feppd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_feppd")
+icon = ExtResource("13_bcos8")
+icon_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/Control/QuickPanel" unique_id=1735657835]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083000004
+anchor_top = 0.038000003
+anchor_right = 0.083000004
+anchor_bottom = 0.038000003
+offset_left = 0.12799835
+offset_top = 0.38399887
+offset_right = 160.12799
+offset_bottom = 40.384
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_436f3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_436f3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_436f3")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_436f3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_436f3")
+selected = 1
+item_count = 3
+popup/item_0/text = "Bar"
+popup/item_0/id = 1
+popup/item_1/text = "Circle"
+popup/item_1/id = 2
+popup/item_2/text = "Inverted Circle"
+popup/item_2/id = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/QuickPanel" unique_id=258513038]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 384.0
+offset_right = 376.0
+offset_bottom = 423.0
+text = "EQ"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/QuickPanel" unique_id=1991733253]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021000002
+anchor_top = 0.5
+anchor_right = 0.97900003
+anchor_bottom = 0.88500005
+offset_left = -0.06400108
+offset_right = 0.06399536
+offset_bottom = -0.32006836
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=402520838]
+layout_mode = 2
+text = "32hz"
+label_settings = SubResource("LabelSettings_feppd")
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=1852213917]
+layout_mode = 2
+size_flags_vertical = 4
+min_value = -100.0
+tick_count = 42
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=1098351317]
+layout_mode = 2
+text = "100hz"
+label_settings = SubResource("LabelSettings_feppd")
+
+[node name="HSlider2" type="HSlider" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=1785526703]
+layout_mode = 2
+allow_lesser = true
+tick_count = 42
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=98948123]
+layout_mode = 2
+text = "320hz"
+label_settings = SubResource("LabelSettings_feppd")
+
+[node name="HSlider3" type="HSlider" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=1042896593]
+layout_mode = 2
+tick_count = 42
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=1293778904]
+layout_mode = 2
+text = "1000hz"
+label_settings = SubResource("LabelSettings_feppd")
+
+[node name="HSlider4" type="HSlider" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=1878164052]
+layout_mode = 2
+tick_count = 42
+
+[node name="Label5" type="Label" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=420180447]
+layout_mode = 2
+text = "3200hz"
+label_settings = SubResource("LabelSettings_feppd")
+
+[node name="HSlider5" type="HSlider" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=419201792]
+layout_mode = 2
+tick_count = 42
+
+[node name="Label6" type="Label" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=1093791147]
+layout_mode = 2
+text = "10000hz"
+label_settings = SubResource("LabelSettings_feppd")
+
+[node name="HSlider6" type="HSlider" parent="CanvasLayer/Control/QuickPanel/VBoxContainer" unique_id=913928977]
+layout_mode = 2
+tick_count = 42
+
+[node name="Control2" type="Control" parent="CanvasLayer" unique_id=378728592]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 704.0
+offset_top = 128.0
+offset_right = 1344.0
+offset_bottom = 832.0
+mouse_filter = 2
+script = ExtResource("11_jfkdj")
+bars = 11
+type = "Bar"
+width_ratio = 0.415
+length_radtio = 750.0
